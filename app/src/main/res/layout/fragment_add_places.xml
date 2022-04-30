@@ -5,26 +5,53 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="20dp"
-    tools:context=".AddPlacesFragment">
+    tools:context=".AddPlacesFragment"
+    android:background="@drawable/background2"
+    >
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Add Places"
-        android:textSize="30dp"
-        android:layout_margin="20dp"
+
         android:gravity="center"
-        android:textColor="#1580B1"
+        android:text="ADD EVACUATION"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please enter Evacuation Name"
+        android:id="@+id/edEvacuationName"
+
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background_normal"
         />
-
-
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please enter Evacuation Number"
+        android:id="@+id/edEvacuationNumber"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background_normal"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please enter Evacuation Barangay"
+        android:id="@+id/edEvacuationBaranggay"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background_normal"
+        />
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Please enter Street/City Address"
         android:id="@+id/edStreet"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/editbox_background_normal"
         />
@@ -34,7 +61,7 @@
         android:layout_height="wrap_content"
         android:hint="Please enter State Name"
         android:id="@+id/edState"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/editbox_background_normal"
         />
@@ -44,7 +71,16 @@
         android:layout_height="wrap_content"
         android:hint="Please enter Country Name"
         android:id="@+id/edCountry"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
+        android:padding="10dp"
+        android:background="@android:drawable/editbox_background_normal"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Please enter Evacuation Barangay"
+        android:id="@+id/edcalamityType"
+        android:layout_marginTop="5dp"
         android:padding="10dp"
         android:background="@android:drawable/editbox_background_normal"
         />
@@ -52,7 +88,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -76,8 +112,7 @@
         android:id="@+id/btnSave"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:text="Save Location to FIrebase"
-        />
+        android:layout_margin="5dp"
+        android:text="Save" />
 
 </LinearLayout>

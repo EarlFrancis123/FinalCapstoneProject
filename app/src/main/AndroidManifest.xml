@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.evacuationapp.finalevacuationapp">
+    package="com.evacuationapp.finalevacuationapp" >
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -13,8 +13,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".StaffAddCalamityActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_staff_add_calamity2"
+            android:theme="@style/AppTheme.NoActionBar" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -31,16 +35,10 @@
             android:value="AIzaSyASqdpxYyEmUT_uYmPcfn9Y4X8fP_Y35_o" />
 
         <activity
-            android:name=".MainActivity2"
+            android:name=".StaffAddEvacuationActivity2"
             android:exported="true"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".AddPostActivity"
             android:exported="false" />
@@ -78,13 +76,7 @@
             android:name=".StaffViewCalamityAvtivity"
             android:exported="false" />
         <activity
-            android:name=".StaffSettingsActivity"
-            android:exported="false" />
-        <activity
             android:name=".StaffAddEvacueeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".StaffAddEvacuationActivity"
             android:exported="false" />
         <activity
             android:name=".StaffAddCalamityActivity"
@@ -93,8 +85,12 @@
         <activity android:name=".SetUpActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".MainActivity" />
         <activity

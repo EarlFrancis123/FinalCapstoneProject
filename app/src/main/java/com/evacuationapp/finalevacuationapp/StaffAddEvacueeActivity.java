@@ -1,9 +1,5 @@
 package com.evacuationapp.finalevacuationapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -13,10 +9,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -25,7 +26,7 @@ import java.util.HashMap;
 public class StaffAddEvacueeActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private Toolbar mainToolbar;
-    EditText EvacueeFnameET,EvacueeLnameET, EvacueeMnameET, EvacueeNumberET, EvacueeGenderET, EvacueeAgeET, EvacueeAddressET, EvacueeBarangayET, EvacueeHeadET, EvacueeCenterET;
+    EditText EvacueeFnameET, EvacueeLnameET, EvacueeMnameET, EvacueeNumberET, EvacueeGenderET, EvacueeAgeET, EvacueeAddressET, EvacueeBarangayET, EvacueeHeadET, EvacueeCenterET;
     private FirebaseAuth firebaseAuth;
     Button Savebtn;
     private FirebaseDatabase db = FirebaseDatabase.getInstance();
@@ -99,29 +100,23 @@ public class StaffAddEvacueeActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
+                switch (item.getItemId()) {
                     case R.id.addtypeofcalamity:
-                        startActivity(new Intent(getApplicationContext(),StaffAddCalamityActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), StaffAddCalamityActivity2.class));
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(), StaffHomeActivity.class));
-                        overridePendingTransition(0,0);
+                        overridePendingTransition(0, 0);
                         return true;
 
                     case R.id.addevacuation:
-                        startActivity(new Intent(getApplicationContext(),StaffAddEvacuationActivity.class));
-                        overridePendingTransition(0,0);
+                        startActivity(new Intent(getApplicationContext(), StaffAddEvacuationActivity2.class));
+                        overridePendingTransition(0, 0);
 
                     case R.id.addevacuee:
 
-                        return true;
-
-                    case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(),StaffSettingsActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
 
 
@@ -130,21 +125,33 @@ public class StaffAddEvacueeActivity extends AppCompatActivity {
             }
         });
 
-    } @Override
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main_menu , menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.profile_menu){
-            startActivity(new Intent(StaffAddEvacueeActivity.this , SetUpActivity.class));
-        }else if(item.getItemId() == R.id.sign_out_menu){
+        if (item.getItemId() == R.id.profile_menu) {
+            startActivity(new Intent(StaffAddEvacueeActivity.this, SetUpActivity.class));
+        } else if (item.getItemId() == R.id.sign_out_menu) {
             firebaseAuth.signOut();
-            startActivity(new Intent(StaffAddEvacueeActivity.this , SignInActivity.class));
+            startActivity(new Intent(StaffAddEvacueeActivity.this, SignInActivity.class));
             finish();
         }
         return true;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+        if (currentUser == null) {
+            startActivity(new Intent(StaffAddEvacueeActivity.this, SignInActivity.class));
+            finish();
+        }
     }
 }

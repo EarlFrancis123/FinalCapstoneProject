@@ -16,9 +16,6 @@
         android:id="@+id/addevacuee"
         android:icon="@drawable/ic_baseline_adddevacuee"
         android:title="Add Evacuee"/>
-    <item
-        android:id="@+id/settings"
-        android:icon="@drawable/ic_baseline_settings"
-        android:title="Settings"/>
+
 
 </menu>

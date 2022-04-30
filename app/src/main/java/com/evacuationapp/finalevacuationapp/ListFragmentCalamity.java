@@ -28,10 +28,10 @@ import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ListFragment#newInstance} factory method to
+ * Use the {@link ListFragmentCalamity#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class  ListFragment extends Fragment {
+public class ListFragmentCalamity extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -42,7 +42,7 @@ public class  ListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public ListFragment() {
+    public ListFragmentCalamity() {
         // Required empty public constructor
     }
 
@@ -52,11 +52,11 @@ public class  ListFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment ListFragment.
+     * @return A new instance of fragment ListFragmentCalamity.
      */
     // TODO: Rename and change types and number of parameters
-    public static ListFragment newInstance(String param1, String param2) {
-        ListFragment fragment = new ListFragment();
+    public static ListFragmentCalamity newInstance(String param1, String param2) {
+        ListFragmentCalamity fragment = new ListFragmentCalamity();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -72,27 +72,25 @@ public class  ListFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
     List<Places> placesList = new ArrayList<>();
     Places places;
     ListView listView;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list, container, false);
-        listView = view.findViewById(R.id.listview);
+        View view = inflater.inflate(R.layout.fragment_list_calamity, container, false);
+        listView = view.findViewById(R.id.listviewcalamity);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("evacuation");
+        databaseReference = firebaseDatabase.getReference("calamity");
         placesList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 placesList.add(snapshot.getValue(Places.class));
-                MyAdapter myAdapter = new MyAdapter(getActivity(), placesList);
+                ListFragmentCalamity.MyAdapter myAdapter = new ListFragmentCalamity.MyAdapter(getActivity(), placesList);
                 listView.setAdapter(myAdapter);
 
 
@@ -159,13 +157,8 @@ public class  ListFragment extends Fragment {
             imgPlace = view.findViewById(R.id.imgPlace);
 
             txtPlace.setText(
-                    " Name: " + stringList.get(i).getEvacuationName()+
-                    "\n Contact number: " + stringList.get(i).getEvacuationNumber() +
-                    "\n Barangay: " + stringList.get(i).getEvacuationBarangay() +
-                    "\n Street : " + stringList.get(i).getStreetAddress() +
-                    "\n City: " + stringList.get(i).getState() +
-                    "\n Country: " + stringList.get(i).getCountry()+
-                    "\n Calamity Type : " + stringList.get(i).getEvacuationCalamityType()
+                    " Name: " + stringList.get(i).getCalamityName()+
+                    "\n Details: " + stringList.get(i).getCalamityDetails()
             );
             try {
 

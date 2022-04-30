@@ -18,6 +18,7 @@
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/drawable/selector.xml" value="0.1145" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/font/aladin.xml" value="0.1712962962962963" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/font/montserrat.xml" value="0.1712962962962963" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_add_places_fragment_calamity.xml" value="0.28802083333333334" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_add_post.xml" value="0.23052536231884058" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_adddata.xml" value="0.18697916666666667" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_calamitylist.xml" value="0.1" />
@@ -30,13 +31,18 @@
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_sign_up.xml" value="0.33" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_splash.xml" value="0.36666666666666664" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_add_calamity.xml" value="0.25" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_add_calamity2.xml" value="0.35104166666666664" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_add_calamity_avtivity.xml" value="0.2105978260869565" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_add_evacuation.xml" value="0.22021660649819494" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_add_evacuation2.xml" value="0.35104166666666664" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_add_evacuee.xml" value="0.33" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_addcalamity2.xml" value="0.35104166666666664" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_home.xml" value="0.29438405797101447" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_settings.xml" value="0.22" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_view_calamity_avtivity.xml" value="0.30117753623188404" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staff_view_evacuation.xml" value="0.1707193515704154" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staffaddevacuation.xml" value="0.1707193515704154" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_staffaddevacuation2.xml" value="0.17831813576494426" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_user_add_post.xml" value="0.23052536231884058" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_user_home.xml" value="0.1" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/activity_user_nearest_evacuation.xml" value="0.33" />
@@ -49,10 +55,14 @@
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/dialogcontent.xml" value="0.18697916666666667" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/each_comment.xml" value="0.1" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/each_post.xml" value="0.36666666666666664" />
-        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_add_places.xml" value="0.1" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_add_p_laces_calamity.xml" value="0.3020833333333333" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_add_places.xml" value="0.33" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_list.xml" value="0.1" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_list_calamity.xml" value="0.3265625" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_main.xml" value="0.1" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_maps.xml" value="0.1" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_staff_a_d_d_calamity_activity2.xml" value="0.35507246376811596" />
+        <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/fragment_staff_add_calamity_activity2.xml" value="0.35507246376811596" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/places_layout.xml" value="0.1" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/singlerow.xml" value="0.18697916666666667" />
         <entry key="..\:/Instag-Blog-App-master/app/src/main/res/layout/userentry.xml" value="0.33" />

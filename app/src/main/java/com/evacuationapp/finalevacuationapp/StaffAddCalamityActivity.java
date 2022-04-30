@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -71,7 +72,7 @@ public class StaffAddCalamityActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.addevacuation:
-                        startActivity(new Intent(getApplicationContext(), StaffAddEvacuationActivity.class));
+                        startActivity(new Intent(getApplicationContext(), StaffAddEvacuationActivity2.class));
                         overridePendingTransition(0, 0);
                         return true;
 
@@ -80,10 +81,6 @@ public class StaffAddCalamityActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         return true;
 
-                    case R.id.settings:
-                        startActivity(new Intent(getApplicationContext(), StaffSettingsActivity.class));
-                        overridePendingTransition(0, 0);
-                        return true;
                 }
                 return false;
             }
@@ -135,7 +132,17 @@ public class StaffAddCalamityActivity extends AppCompatActivity {
 
 
     }
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = firebaseAuth.getCurrentUser();
+            if(currentUser == null){
+                startActivity(new Intent(StaffAddCalamityActivity.this, SignInActivity.class));
+                finish();
+            }
 
 
 }
+
+}
+

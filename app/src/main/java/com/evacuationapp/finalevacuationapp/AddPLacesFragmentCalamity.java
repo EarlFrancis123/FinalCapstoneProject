@@ -46,10 +46,10 @@ import me.shaohui.advancedluban.OnCompressListener;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link AddPlacesFragment#newInstance} factory method to
+ * Use the {@link AddPLacesFragmentCalamity#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class AddPlacesFragment extends Fragment {
+public class AddPLacesFragmentCalamity extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -60,7 +60,7 @@ public class AddPlacesFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AddPlacesFragment() {
+    public AddPLacesFragmentCalamity() {
         // Required empty public constructor
     }
 
@@ -70,11 +70,11 @@ public class AddPlacesFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment AddPlacesFragment.
+     * @return A new instance of fragment AddPLacesFragmentCalamity.
      */
     // TODO: Rename and change types and number of parameters
-    public static AddPlacesFragment newInstance(String param1, String param2) {
-        AddPlacesFragment fragment = new AddPlacesFragment();
+    public static AddPLacesFragmentCalamity newInstance(String param1, String param2) {
+        AddPLacesFragmentCalamity fragment = new AddPLacesFragmentCalamity();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -88,47 +88,44 @@ public class AddPlacesFragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
-
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    EditText edStreetAddress, edState, edCountry,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay;
+    EditText edCalamityName, edCalamityDetails;
     Button btnSave;
     ImageView imgPlace;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_add_places, container, false);
-
+        View v = inflater.inflate(R.layout.fragment_add_p_laces_calamity, container, false);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
-        edStreetAddress = v.findViewById(R.id.edStreet);
-        edState = v.findViewById(R.id.edState);
-        edCountry = v.findViewById(R.id.edCountry);
+        edCalamityName = v.findViewById(R.id.edCalamityName);
+        edCalamityDetails = v.findViewById(R.id.edCalamityDetails);
+
         btnSave = v.findViewById(R.id.btnSave);
         imgPlace = v.findViewById(R.id.imgPlace);
-        evacuationName = v.findViewById(R.id.edEvacuationName);
-        evacuationNumber = v.findViewById(R.id.edEvacuationNumber);
-        evacuationBarangay = v.findViewById(R.id.edEvacuationBaranggay);
-        evacuationCalamityType = v.findViewById(R.id.edcalamityType);
+
         ActivityCompat.requestPermissions(
                 getActivity(), new String[]{
                         Manifest.permission.CAMERA,
                         Manifest.permission.READ_EXTERNAL_STORAGE,
                         Manifest.permission.WRITE_EXTERNAL_STORAGE}
                 , 1
+
         );
         imgPlace.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               // if (!checkCameraPermission()) {
+                // if (!checkCameraPermission()) {
 
-               // } else {
-                    takeImage();
-               // }
+                // } else {
+                takeImage();
+                // }
             }
         });
 
@@ -137,35 +134,20 @@ public class AddPlacesFragment extends Fragment {
             public void onClick(View view) {
                 Places places=new Places();
                 //  List<Places> placesList=new ArrayList<>();
-                places.setEvacuationName(evacuationName.getText().toString());
-                places.setEvacuationNumber(evacuationNumber.getText().toString());
-                places.setEvacuationBarangay(evacuationBarangay.getText().toString());
-                places.setEvacuationCalamityType(evacuationCalamityType.getText().toString());
-                places.setStreetAddress(edStreetAddress.getText().toString());
-                places.setState(edState.getText().toString());
-                places.setCountry(edCountry.getText().toString());
+                places.setCalamityName(edCalamityName.getText().toString());
+                places.setCalamityDetails(edCalamityDetails.getText().toString());
                 places.setImage(encodeImage);
-                places.setLatitude(getLatLongFromAddress(requireContext(), places.getStreetAddress() + "," +
-                        places.getState() + "," +
-                        places.getCountry() + ",").latitude);
-                places.setLongitude(getLatLongFromAddress(requireContext(), places.getStreetAddress() + "," +
-                        places.getState() + "," +
-                        places.getCountry() + ",").longitude);
 
 
-                databaseReference=firebaseDatabase.getReference("evacuation").child(edStreetAddress.getText().toString());
+
+                databaseReference=firebaseDatabase.getReference("calamity").child(edCalamityName.getText().toString());
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         databaseReference.setValue(places);
-                        Toast.makeText(getActivity(), "Evacuation Added Successfully", Toast.LENGTH_SHORT).show();
-                        edCountry.setText("");
-                        edState.setText("");
-                        edStreetAddress.setText("");
-                        evacuationName.setText("");
-                        evacuationNumber.setText("");
-                        evacuationBarangay.setText("");
-                        evacuationCalamityType.setText("");
+                        Toast.makeText(getActivity(), "Dara Added Successfully", Toast.LENGTH_SHORT).show();
+                        edCalamityName.setText("");
+                        edCalamityDetails.setText("");
                         imgPlace.setImageResource(android.R.drawable.ic_menu_gallery);
                     }
 

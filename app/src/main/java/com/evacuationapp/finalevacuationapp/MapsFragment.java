@@ -96,16 +96,16 @@ public class MapsFragment extends Fragment {
     void getDataFromFirebase(GoogleMap googleMap){
         placesList.clear();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("placesinfo");
+        databaseReference = firebaseDatabase.getReference("evacuation");
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 placesList.add(snapshot.getValue(Places.class));
                 LatLng address;
-                Log.e("placesList",placesList.size()+"");
+                Log.e("evacuation",placesList.size()+"");
                 for(int i=0;i<placesList.size();i++){
                     try {
-                        Log.e("placesList",placesList.get(i).getStreetAddress());
+                        Log.e("evacuation",placesList.get(i).getStreetAddress());
                         String addr=placesList.get(i).getStreetAddress()+","+
                                 placesList.get(i).getState()+","+
                                 placesList.get(i).getCountry()+",";

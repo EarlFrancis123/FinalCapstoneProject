@@ -1,18 +1,18 @@
 package com.evacuationapp.finalevacuationapp;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.evacuationapp.finalevacuationapp.Adapter.PostAdapter;
 import com.evacuationapp.finalevacuationapp.Model.Post;
@@ -145,7 +145,7 @@ public class StaffHomeActivity extends AppCompatActivity {
                     switch (item.getItemId())
                     {
                         case R.id.addtypeofcalamity:
-                            startActivity(new Intent(getApplicationContext(),StaffAddCalamityActivity.class));
+                            startActivity(new Intent(getApplicationContext(),StaffAddCalamityActivity2.class));
                             overridePendingTransition(0,0);
                             return true;
 
@@ -153,7 +153,7 @@ public class StaffHomeActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.addevacuation:
-                            startActivity(new Intent(getApplicationContext(),StaffAddEvacuationActivity.class));
+                            startActivity(new Intent(getApplicationContext(),StaffAddEvacuationActivity2.class));
                             overridePendingTransition(0,0);
                             return true;
 
@@ -162,10 +162,6 @@ public class StaffHomeActivity extends AppCompatActivity {
                             overridePendingTransition(0,0);
                             return true;
 
-                        case R.id.settings:
-                            startActivity(new Intent(getApplicationContext(),StaffSettingsActivity.class));
-                            overridePendingTransition(0,0);
-                            return true;
                     }
                     return false;
                 }

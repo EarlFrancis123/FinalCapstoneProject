@@ -1,10 +1,26 @@
 package com.evacuationapp.finalevacuationapp;
 
 public class Places {
-    String streetAddress,state,country,image;
+    String streetAddress,state,country,image,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay,calamityName,calamityDetails;
     double latitude,longitude;
     public String getStreetAddress() {
         return streetAddress;
+    }
+
+    public String getCalamityName() {
+        return calamityName;
+    }
+
+    public void setCalamityName(String calamityName) {
+        this.calamityName = calamityName;
+    }
+
+    public String getCalamityDetails() {
+        return calamityDetails;
+    }
+
+    public void setCalamityDetails(String calamityDetails) {
+        this.calamityDetails = calamityDetails;
     }
 
     public void setStreetAddress(String streetAddress) {
@@ -49,5 +65,38 @@ public class Places {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getEvacuationName() {
+        return evacuationName;
+    }
+
+    public void setEvacuationName(String evacuationName) {
+        this.evacuationName = evacuationName;
+    }
+
+    public String getEvacuationNumber() {
+        return evacuationNumber;
+    }
+
+    public void setEvacuationNumber(String evacuationNumber) {
+        this.evacuationNumber = evacuationNumber;
+    }
+
+    public String getEvacuationCalamityType() {
+        return evacuationCalamityType;
+    }
+
+    public void setEvacuationCalamityType(String evacuationCalamityType) {
+        this.evacuationCalamityType = evacuationCalamityType;
+    }
+
+
+    public String getEvacuationBarangay() {
+        return evacuationBarangay;
+    }
+
+    public void setEvacuationBarangay(String evacuationBarangay) {
+        this.evacuationBarangay = evacuationBarangay;
     }
 }
