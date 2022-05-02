@@ -74,6 +74,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_staff_add_calamity2">StaffAddCalamityActivity2</string>
     <string name="title_activity_staff_addcalamity2">StaffADDCalamityActivity2</string>
+    <string name="title_activity_staff_add_evacuee2">StaffAddEvacueeActivity2</string>
 
 
 </resources>

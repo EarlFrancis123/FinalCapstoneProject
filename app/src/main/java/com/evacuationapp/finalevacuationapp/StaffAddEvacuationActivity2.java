@@ -55,7 +55,7 @@ public class StaffAddEvacuationActivity2 extends AppCompatActivity {
                         return true;
 
                     case R.id.addevacuee:
-                        startActivity(new Intent(getApplicationContext(), StaffAddEvacueeActivity.class));
+                        startActivity(new Intent(getApplicationContext(), StaffAddEvacueeActivity2.class));
                         overridePendingTransition(0, 0);
                         return true;
 

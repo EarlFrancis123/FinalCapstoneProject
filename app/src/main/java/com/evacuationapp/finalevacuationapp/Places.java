@@ -2,6 +2,7 @@ package com.evacuationapp.finalevacuationapp;
 
 public class Places {
     String streetAddress,state,country,image,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay,calamityName,calamityDetails;
+    String firstName, lastName, middleName, contactInfo,gender,age,address,barangay,headOfFamily;
     double latitude,longitude;
     public String getStreetAddress() {
         return streetAddress;

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".AddPlacesFragmentEvacuee"
+    android:background="@drawable/background2">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:gravity="center"
+        android:text="ADD EVACEEE"
+        android:textColor="#FFFFFF"
+        android:textSize="30dp" />
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="352dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white"
+      >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeFnameLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="First Name"
+                app:startIconDrawable="@drawable/ic_baseline_name"
+               >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeFirstName"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeLnameLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Last Name"
+
+                app:startIconDrawable="@drawable/ic_baseline_name">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeLastName"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeMnameLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Middle Name"
+
+                app:startIconDrawable="@drawable/ic_baseline_name">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeMiddleName"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeNumberLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Contact Info"
+                android:inputType="number"
+
+                app:startIconDrawable="@drawable/ic_baseline_center_number"
+
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeContactNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeGenderLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Gender"
+
+
+                app:startIconDrawable="@drawable/ic_baseline_name">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeGender"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeAgeLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Age"
+                android:inputType="number"
+                app:startIconDrawable="@drawable/ic_baseline_name"
+
+                >
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeAge"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeAddressLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Address"
+
+
+                app:startIconDrawable="@drawable/ic_baseline_center_address">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeBarangayLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Barangay"
+
+
+                app:startIconDrawable="@drawable/ic_baseline_barangay">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeBarangay"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeHeadLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Head of the Family"
+
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:startIconDrawable="@drawable/ic_baseline_name">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeHeadOfFamily"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeCenterLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Evacuation Center"
+
+                app:startIconDrawable="@drawable/ic_baseline_barangay">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edEvacueeEvacuation"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Please Select Image"
+            android:textSize="15dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/imgPlace"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@android:drawable/ic_menu_gallery"
+            />
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Save" />
+
+</LinearLayout>
