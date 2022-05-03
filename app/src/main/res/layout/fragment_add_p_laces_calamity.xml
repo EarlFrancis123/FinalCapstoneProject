@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="20dp"
     tools:context=".AddPLacesFragmentCalamity"
@@ -20,25 +21,61 @@
         android:textColor="@color/white"
         android:textSize="30dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Please enter Calamity Name"
-        android:id="@+id/edCalamityName"
-        android:layout_marginTop="40dp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="351dp"
+        android:layout_height="222dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/white">
 
-        android:padding="10dp"
-        android:background="@android:drawable/editbox_background_normal"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Please enter Calamity Details"
-        android:id="@+id/edCalamityDetails"
-        android:layout_marginTop="5dp"
-        android:padding="10dp"
-        android:background="@android:drawable/editbox_background_normal"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeFnameLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Calamity name"
+                app:startIconDrawable="@drawable/ic_baseline_name">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edCalamityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeMnameLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Details"
+
+                app:startIconDrawable="@drawable/ic_baseline_name">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edCalamityDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
     <LinearLayout
         android:layout_width="match_parent"

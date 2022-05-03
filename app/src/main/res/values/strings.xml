@@ -19,6 +19,8 @@
     <string name="tab_text_3">Map</string>
     <string name="tab_text_4">Add Calamity</string>
     <string name="tab_text_5">Calamity List</string>
+    <string name="tab_text_6">Add Evacuee</string>
+    <string name="tab_text_7">Evacuee List</string>
     <string name="col1">Calamity name</string>
     <string name="col2">Action</string>
 

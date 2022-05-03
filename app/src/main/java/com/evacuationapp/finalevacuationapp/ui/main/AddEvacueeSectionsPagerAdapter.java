@@ -23,7 +23,7 @@ import com.evacuationapp.finalevacuationapp.R;
 public class AddEvacueeSectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_6, R.string.tab_text_7,R.string.tab_text_3};
     private final Context mContext;
 
     public AddEvacueeSectionsPagerAdapter(Context context, FragmentManager fm) {
