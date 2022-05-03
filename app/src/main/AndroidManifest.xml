@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.evacuationapp.finalevacuationapp">
+    package="com.evacuationapp.finalevacuationapp" >
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -13,17 +13,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity
-            android:name=".StaffAddEvacueeActivity2"
-            android:exported="true"
-            android:label="@string/title_activity_staff_add_evacuee2"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".StaffAddCalamityActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_staff_add_calamity2"
-            android:theme="@style/AppTheme.NoActionBar" />
+        android:theme="@style/AppTheme" >
+
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -39,6 +30,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyASqdpxYyEmUT_uYmPcfn9Y4X8fP_Y35_o" />
 
+        <activity
+            android:name=".StaffAddEvacueeActivity2"
+            android:exported="true"
+            android:label="@string/title_activity_staff_add_evacuee2"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".StaffAddCalamityActivity2"
+            android:exported="false"
+            android:label="@string/title_activity_staff_add_calamity2"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".StaffAddEvacuationActivity2"
             android:exported="true"
@@ -90,7 +91,7 @@
         <activity android:name=".SetUpActivity" />
         <activity android:name=".SignInActivity" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".SplashActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

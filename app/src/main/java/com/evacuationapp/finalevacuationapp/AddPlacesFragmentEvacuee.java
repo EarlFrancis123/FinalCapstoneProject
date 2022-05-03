@@ -93,7 +93,7 @@ public class AddPlacesFragmentEvacuee extends Fragment {
     }
     DatabaseReference databaseReference;
     FirebaseDatabase firebaseDatabase;
-    EditText firstName, lastName, middleName, contactInfo,gender,age,address,barangay,headOfFamily,evacuationName;
+    EditText firstName, lastName, middleName, contactInfo,gender,age,address,barangay,headOfFamily,evacuationName,edStreetAddress,edState,edCountry;
     Button btnSave;
     ImageView imgPlace;
 
@@ -109,7 +109,9 @@ public class AddPlacesFragmentEvacuee extends Fragment {
         contactInfo = v.findViewById(R.id.edEvacueeContactNumber);
         gender = v.findViewById(R.id.edEvacueeGender);
         age = v.findViewById(R.id.edEvacueeAge);
-        address = v.findViewById(R.id.edEvacueeAddress);
+        edStreetAddress = v.findViewById(R.id.edStreet);
+        edState = v.findViewById(R.id.edState);
+        edCountry = v.findViewById(R.id.edCountry);
         barangay = v.findViewById(R.id.edEvacueeBarangay);
         headOfFamily = v.findViewById(R.id.edEvacueeHeadOfFamily);
         evacuationName = v.findViewById(R.id.edEvacueeEvacuation);
@@ -142,16 +144,18 @@ public class AddPlacesFragmentEvacuee extends Fragment {
             public void onClick(View view) {
                 Places places=new Places();
                 //  List<Places> placesList=new ArrayList<>();
-                places.setCalamityName(firstName.getText().toString());
-                places.setCalamityDetails(lastName.getText().toString());
-                places.setCalamityDetails(middleName.getText().toString());
-                places.setCalamityDetails(contactInfo.getText().toString());
-                places.setCalamityDetails(gender.getText().toString());
-                places.setCalamityDetails(age.getText().toString());
-                places.setCalamityDetails(address.getText().toString());
-                places.setCalamityDetails(barangay.getText().toString());
-                places.setCalamityDetails(headOfFamily.getText().toString());
-                places.setCalamityDetails(evacuationName.getText().toString());
+                places.setFirstName(firstName.getText().toString());
+                places.setLastName(lastName.getText().toString());
+                places.setMiddleName(middleName.getText().toString());
+                places.setContactInfo(contactInfo.getText().toString());
+                places.setGender(gender.getText().toString());
+                places.setAge(age.getText().toString());
+                places.setStreetAddress(edStreetAddress.getText().toString());
+                places.setState(edState.getText().toString());
+                places.setCountry(edCountry.getText().toString());
+                places.setBarangay(barangay.getText().toString());
+                places.setHeadOfFamily(headOfFamily.getText().toString());
+                places.setEvacuationName(evacuationName.getText().toString());
 
 
                 places.setImage(encodeImage);
@@ -170,11 +174,18 @@ public class AddPlacesFragmentEvacuee extends Fragment {
                         contactInfo.setText("");
                         gender.setText("");
                         age.setText("");
-                        address.setText("");
+                        edStreetAddress.setText("");
+                        edState.setText("");
+                        edCountry.setText("");
                         barangay.setText("");
                         headOfFamily.setText("");
                         evacuationName.setText("");
-
+                        places.setLatitude(getLatLongFromAddress(requireContext(), places.getStreetAddress() + "," +
+                                places.getState() + "," +
+                                places.getCountry() + ",").latitude);
+                        places.setLongitude(getLatLongFromAddress(requireContext(), places.getStreetAddress() + "," +
+                                places.getState() + "," +
+                                places.getCountry() + ",").longitude);
 
 
                         imgPlace.setImageResource(android.R.drawable.ic_menu_gallery);

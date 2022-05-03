@@ -11,7 +11,9 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import com.evacuationapp.finalevacuationapp.AddPlacesFragment;
 import com.evacuationapp.finalevacuationapp.AddPlacesFragmentEvacuee;
 import com.evacuationapp.finalevacuationapp.ListFragment;
+import com.evacuationapp.finalevacuationapp.ListFragmentEvacuee;
 import com.evacuationapp.finalevacuationapp.MapsFragment;
+import com.evacuationapp.finalevacuationapp.MapsFragmentEvacuee;
 import com.evacuationapp.finalevacuationapp.R;
 
 /**
@@ -21,7 +23,7 @@ import com.evacuationapp.finalevacuationapp.R;
 public class AddEvacueeSectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2,R.string.tab_text_3};
     private final Context mContext;
 
     public AddEvacueeSectionsPagerAdapter(Context context, FragmentManager fm) {
@@ -33,7 +35,8 @@ public class AddEvacueeSectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:return new AddPlacesFragmentEvacuee();
-            case 1:return new ListFragment();
+            case 1:return new ListFragmentEvacuee();
+            case 2:return new MapsFragmentEvacuee();
             default: return PlaceholderFragment.newInstance(position + 1);
         }
     }
@@ -46,6 +49,6 @@ public class AddEvacueeSectionsPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 }

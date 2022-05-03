@@ -48,7 +48,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeFirstName"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -67,7 +67,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeLastName"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -86,7 +86,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeMiddleName"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -108,7 +108,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeContactNumber"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -128,7 +128,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeGender"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -149,27 +149,65 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeAge"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/evacueeAddressLO"
+                android:id="@+id/evacueeStreetLO"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="32dp"
-                android:hint="Address"
+                android:hint="Street Address"
 
 
                 app:startIconDrawable="@drawable/ic_baseline_center_address">
 
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edEvacueeAddress"
+                    android:id="@+id/edStreet"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeStateLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="State"
+
+
+                app:startIconDrawable="@drawable/ic_baseline_center_address">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edState"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/evacueeCountryLO"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="32dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Country Address"
+
+
+                app:startIconDrawable="@drawable/ic_baseline_center_address">
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edCountry"
+                    android:layout_width="match_parent"
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -190,7 +228,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeBarangay"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -211,7 +249,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeHeadOfFamily"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -230,7 +268,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edEvacueeEvacuation"
                     android:layout_width="match_parent"
-                    android:layout_height="58dp" />
+                    android:layout_height="45dp" />
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>
 

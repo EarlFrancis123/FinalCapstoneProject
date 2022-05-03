@@ -18,16 +18,16 @@
 
     <TextView
         android:id="@+id/txtCity"
-        android:layout_width="267dp"
-        android:layout_height="168dp"
+        android:layout_width="258dp"
+        android:layout_height="283dp"
         android:layout_marginLeft="120dp"
         android:gravity="center_vertical"
         android:text="Place 1"
+        android:textColor="@color/black"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:textColor="@color/black"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

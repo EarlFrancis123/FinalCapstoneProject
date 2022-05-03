@@ -81,10 +81,10 @@ public class ListFragmentEvacuee extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_list_calamity, container, false);
-        listView = view.findViewById(R.id.listviewcalamity);
+        View view = inflater.inflate(R.layout.fragment_listevacuee, container, false);
+        listView = view.findViewById(R.id.listviewevacuee);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        databaseReference = firebaseDatabase.getReference("calamity");
+        databaseReference = firebaseDatabase.getReference("evacuee");
         placesList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
@@ -157,11 +157,22 @@ public class ListFragmentEvacuee extends Fragment {
             imgPlace = view.findViewById(R.id.imgPlace);
 
             txtPlace.setText(
-                    " Name: " + stringList.get(i).getCalamityName()+
-                    "\n Details: " + stringList.get(i).getCalamityDetails()
+                    " firstName: " + stringList.get(i).getFirstName()+
+                    "\n lastName: " + stringList.get(i).getLastName()+
+                            "\n middleName: " + stringList.get(i).getMiddleName()+
+                            "\n contactInfo: " + stringList.get(i).getContactInfo()+
+                            "\n gender: " + stringList.get(i).getGender()+
+                            "\n age: " + stringList.get(i).getAge()+
+                            "\n Street: " + stringList.get(i).getStreetAddress()+
+                            "\n State: " + stringList.get(i).getState()+
+                            "\n Country: " + stringList.get(i).getCountry()+
+                            "\n Barangay: " + stringList.get(i).getBarangay()+
+                            "\n Head of Family: " + stringList.get(i).getHeadOfFamily()+
+                            "\n Evacuation Name: " + stringList.get(i).getEvacuationName()
+
+
             );
             try {
-
                 byte[] imageAsByte = Base64.decode(placesList.get(i).getImage().getBytes(), Base64.DEFAULT);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
                 imgPlace.setImageBitmap(bitmap);
