@@ -154,7 +154,7 @@ public class  ListFragment extends Fragment {
 
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
-            view = LayoutInflater.from(context).inflate(R.layout.places_layout, viewGroup, false);
+            view = LayoutInflater.from(context).inflate(R.layout.places_layout_evacuation, viewGroup, false);
             txtPlace = view.findViewById(R.id.txtCity);
             imgPlace = view.findViewById(R.id.imgPlace);
 
