@@ -25,7 +25,7 @@ import com.evacuationapp.finalevacuationapp.R;
 public class UserNearestSectionsPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_4, R.string.tab_text_5,R.string.tab_text_3};
+    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_8, R.string.tab_text_2,R.string.tab_text_3};
     private final Context mContext;
 
     public UserNearestSectionsPagerAdapter(Context context, FragmentManager fm) {

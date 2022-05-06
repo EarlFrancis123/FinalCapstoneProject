@@ -91,7 +91,8 @@ public class MapsFragmentNearestEvacuation extends Fragment {
             mapFragment.getMapAsync(callback);
         }
     }
-
+    Latitude lt = new Latitude();
+    ArrayList<Double> result = new ArrayList<Double>();
     List<Places> placesList = new ArrayList<>();
     void getDataFromFirebase(GoogleMap googleMap){
         placesList.clear();
@@ -102,24 +103,38 @@ public class MapsFragmentNearestEvacuation extends Fragment {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 placesList.add(snapshot.getValue(Places.class));
                 LatLng address;
-                Log.e("evacuation",placesList.size()+"");
+                Log.e("placesList",placesList.size()+"");
                 for(int i=0;i<placesList.size();i++){
                     try {
-                        Log.e("evacuation",placesList.get(i).getStreetAddress());
+                        Log.e("placesList",placesList.get(i).getStreetAddress());
                         String addr=placesList.get(i).getStreetAddress()+","+
                                 placesList.get(i).getState()+","+
                                 placesList.get(i).getCountry()+",";
+
+
+                        result.add((double) haversine(lt.getuserLatitude(),lt.getuserLongitude(),placesList.get(i).getLatitude(), placesList.get(i).getLongitude()));
                         address=new LatLng(placesList.get(i).getLatitude(),placesList.get(i).getLongitude());
                         byte[] imageAsByte = Base64.decode(placesList.get(i).getImage().getBytes(), Base64.DEFAULT);
                         Bitmap bitmap = BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
                         googleMap.addMarker(new MarkerOptions().position(address)
-                                .title(placesList.get(i).getStreetAddress()))
+                                .title(placesList.get(i).getStreetAddress()+", " + String.valueOf(String.format("%.02f",result.get(i*2)))+" KM"))
                                 .setIcon(BitmapDescriptorFactory.fromBitmap(bitmap));
+
+
                         if (i==0)
                             googleMap.moveCamera(CameraUpdateFactory.newLatLng(address));
                     }catch (Exception e){}
                 }
+                //remove duplicates
+                for(int i=0;i<result.size();i++){
+                    for(int j=i+1;j<result.size();j++){
+                        if(result.get(i).equals(result.get(j))){
+                            result.remove(j);
+                            j--;
+                        }
+                    }
 
+                }
 
             }
 
@@ -148,9 +163,26 @@ public class MapsFragmentNearestEvacuation extends Fragment {
         });
     }
 
+    public static double haversine(double lat1, double lon1,
+                                   double lat2, double lon2) {
+        // distance between latitudes and longitudes
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
 
+        // convert to radians
+        lat1 = Math.toRadians(lat1);
+        lat2 = Math.toRadians(lat2);
 
+        // apply formulae
+        double a = Math.pow(Math.sin(dLat / 2), 2) +
+                Math.pow(Math.sin(dLon / 2), 2) *
+                        Math.cos(lat1) *
+                        Math.cos(lat2);
+        double rad = 6371;
+        double c = 2 * Math.asin(Math.sqrt(a));
+        return rad * c;
 
+    }
 
     LatLng getLatLongFromAddress(Context context,String strAddress){
         Geocoder geocoder=new Geocoder(context);

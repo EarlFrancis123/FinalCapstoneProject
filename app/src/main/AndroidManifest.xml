@@ -17,7 +17,7 @@
         <activity
             android:name=".UserNearestEvacuationActivity2"
             android:exported="false"
-            android:label="@string/title_activity_user_nearest_evacuation2"
+
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
@@ -90,6 +90,9 @@
             android:exported="false" />
         <activity
             android:name=".StaffAddCalamityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GetLatLong"
             android:exported="false" />
         <activity android:name=".CommentsActivity" />
         <activity android:name=".SetUpActivity" />

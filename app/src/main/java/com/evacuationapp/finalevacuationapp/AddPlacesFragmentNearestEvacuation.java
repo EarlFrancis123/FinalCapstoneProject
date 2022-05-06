@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -53,11 +54,20 @@ public class AddPlacesFragmentNearestEvacuation extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    Latitude lt = new Latitude();
+    TextView latitude , longitude;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_places_nearest_evacuation, container, false);
+        View v = inflater.inflate(R.layout.fragment_add_places_nearest_evacuation, container, false);
+
+        latitude = v.findViewById(R.id.latTv);
+        longitude = v.findViewById(R.id.longTv);
+
+        latitude.setText(String.valueOf(lt.getuserLatitude()));
+        longitude.setText(String.valueOf(lt.getuserLongitude()));
+    return v;
     }
+
 }

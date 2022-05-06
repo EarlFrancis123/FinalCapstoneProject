@@ -21,13 +21,13 @@
 
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/latTv"
         android:layout_width="372dp"
         android:layout_height="44dp"
         android:layout_marginTop="50dp"
         android:text="TextView" />
     <TextView
-        android:id="@+id/textView11"
+        android:id="@+id/longTv"
         android:layout_width="372dp"
         android:layout_height="44dp"
         android:text="TextView" />

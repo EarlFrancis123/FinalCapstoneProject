@@ -92,10 +92,8 @@ public class ListFragmentNearestEvacuation extends Fragment {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 placesList.add(snapshot.getValue(Places.class));
-                ListFragmentNearestEvacuation.MyAdapter myAdapter = new ListFragmentNearestEvacuation.MyAdapter(getActivity(), placesList);
+                MyAdapter myAdapter = new MyAdapter(getActivity(), placesList);
                 listView.setAdapter(myAdapter);
-
-
             }
 
 
@@ -152,6 +150,8 @@ public class ListFragmentNearestEvacuation extends Fragment {
             return i;
         }
 
+        Latitude lt = new Latitude();
+
         @Override
         public View getView(int i, View view, ViewGroup viewGroup) {
             view = LayoutInflater.from(context).inflate(R.layout.places_layout, viewGroup, false);
@@ -159,24 +159,45 @@ public class ListFragmentNearestEvacuation extends Fragment {
             imgPlace = view.findViewById(R.id.imgPlace);
 
             txtPlace.setText(
-                    " Name: " + stringList.get(i).getEvacuationName()+
-                            "\n Contact number: " + stringList.get(i).getEvacuationNumber() +
-                            "\n Barangay: " + stringList.get(i).getEvacuationBarangay() +
-                            "\n Street : " + stringList.get(i).getStreetAddress() +
-                            "\n City: " + stringList.get(i).getState() +
-                            "\n Country: " + stringList.get(i).getCountry()+
-                            "\n Calamity Type : " + stringList.get(i).getEvacuationCalamityType());
+                     " Name : " + stringList.get(i).getEvacuationName() +
+                    "\n Number : " + stringList.get(i).getEvacuationNumber() +
+                    "\n Evacuation Barangay : " + stringList.get(i).getEvacuationBarangay() +
+                    "\n Evacuation Calamity Type : " + stringList.get(i).getEvacuationCalamityType() +
+                    "\n City : " + stringList.get(i).getStreetAddress() +
+                    "\n State: " + stringList.get(i).getState() +
+                    "\n Country: " + stringList.get(i).getCountry()+
+                    "\n Distance KM : " +   String.valueOf(String.format("%.02f",(haversine(lt.getuserLatitude(),lt.getuserLongitude(),placesList.get(i).getLatitude(), placesList.get(i).getLongitude())))));
 
             try {
 
                 byte[] imageAsByte = Base64.decode(placesList.get(i).getImage().getBytes(), Base64.DEFAULT);
                 Bitmap bitmap = BitmapFactory.decodeByteArray(imageAsByte, 0, imageAsByte.length);
                 imgPlace.setImageBitmap(bitmap);
+
             }catch (Exception e){}
             return view;
-
-
         }
+    }
+
+    public static double haversine(double lat1, double lon1,
+                                   double lat2, double lon2) {
+        // distance between latitudes and longitudes
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+
+        // convert to radians
+        lat1 = Math.toRadians(lat1);
+        lat2 = Math.toRadians(lat2);
+
+        // apply formulae
+        double a = Math.pow(Math.sin(dLat / 2), 2) +
+                Math.pow(Math.sin(dLon / 2), 2) *
+                        Math.cos(lat1) *
+                        Math.cos(lat2);
+        double rad = 6371;
+        double c = 2 * Math.asin(Math.sqrt(a));
+        return rad * c;
+
     }
 
 }

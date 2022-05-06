@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/activity_maps_getlatlong.xml" value="0.18072916666666666" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/activity_user_nearest_evacuation2.xml" value="0.35280797101449274" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/fragment_add_places.xml" value="0.1" />
+        <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/fragment_add_places_evacuee.xml" value="0.1793478260869565" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/fragment_add_places_nearest_evacuation.xml" value="0.35280797101449274" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/fragment_list.xml" value="0.35280797101449274" />
         <entry key="..\:/Capstone/FinalCapstoneProject/app/src/main/res/layout/fragment_list_nearest_evacuation.xml" value="0.35280797101449274" />
