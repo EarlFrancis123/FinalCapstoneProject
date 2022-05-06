@@ -50,7 +50,7 @@ public class UserSearchEvacueeActivity extends AppCompatActivity {
                         return true;
 
                     case R.id.nearest:
-                        startActivity(new Intent(getApplicationContext(),UserNearestEvacuationActivity.class));
+                        startActivity(new Intent(getApplicationContext(),UserNearestEvacuationActivity2.class));
                         overridePendingTransition(0,0);
                         return true;
 
