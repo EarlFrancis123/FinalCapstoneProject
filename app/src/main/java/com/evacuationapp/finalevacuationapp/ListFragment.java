@@ -22,6 +22,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +79,7 @@ public class  ListFragment extends Fragment {
     List<Places> placesList = new ArrayList<>();
     Places places;
     ListView listView;
+    TextView titleTV;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -86,6 +88,7 @@ public class  ListFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_list, container, false);
         listView = view.findViewById(R.id.listview);
         firebaseDatabase = FirebaseDatabase.getInstance();
+        titleTV = view.findViewById(R.id.TitleTV);
         databaseReference = firebaseDatabase.getReference("evacuation");
         placesList.clear();
         databaseReference.addChildEventListener(new ChildEventListener() {
@@ -160,12 +163,12 @@ public class  ListFragment extends Fragment {
 
             txtPlace.setText(
                     " Name: " + stringList.get(i).getEvacuationName()+
-                    "\n Contact number: " + stringList.get(i).getEvacuationNumber() +
-                    "\n Barangay: " + stringList.get(i).getEvacuationBarangay() +
-                    "\n Street : " + stringList.get(i).getStreetAddress() +
-                    "\n City: " + stringList.get(i).getState() +
-                    "\n Country: " + stringList.get(i).getCountry()+
-                    "\n Calamity Type : " + stringList.get(i).getEvacuationCalamityType()
+                            "\n Contact number: " + stringList.get(i).getEvacuationNumber() +
+                            "\n Barangay: " + stringList.get(i).getEvacuationBarangay() +
+                            "\n Street : " + stringList.get(i).getStreetAddress() +
+                            "\n City: " + stringList.get(i).getState() +
+                            "\n Country: " + stringList.get(i).getCountry()+
+                            "\n Calamity Type : " + stringList.get(i).getEvacuationCalamityType()
             );
             try {
 

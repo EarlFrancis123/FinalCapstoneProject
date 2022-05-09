@@ -4,17 +4,15 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.evacuationapp.finalevacuationapp.ui.main.AddEvacueeSectionsPagerAdapter;
 import com.evacuationapp.finalevacuationapp.databinding.ActivityStaffAddEvacuee2Binding;
@@ -25,7 +23,7 @@ public class StaffAddEvacueeActivity2 extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private ActivityStaffAddEvacuee2Binding binding;
     private FirebaseAuth firebaseAuth;
-
+    private Toolbar mainToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +37,9 @@ public class StaffAddEvacueeActivity2 extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-
+        mainToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("Evacuation");
 
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -96,4 +96,5 @@ public class StaffAddEvacueeActivity2 extends AppCompatActivity {
         }
         return true;
     }
+
 }

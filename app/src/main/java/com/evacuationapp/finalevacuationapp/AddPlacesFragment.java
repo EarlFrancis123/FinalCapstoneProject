@@ -114,6 +114,10 @@ public class AddPlacesFragment extends Fragment {
         evacuationNumber = v.findViewById(R.id.edEvacuationNumber);
         evacuationBarangay = v.findViewById(R.id.edEvacuationBaranggay);
         evacuationCalamityType = v.findViewById(R.id.edcalamityType);
+
+
+
+
         ActivityCompat.requestPermissions(
                 getActivity(), new String[]{
                         Manifest.permission.CAMERA,

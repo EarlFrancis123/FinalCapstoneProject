@@ -1,17 +1,29 @@
 package com.evacuationapp.finalevacuationapp;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class UserRescueActivity extends AppCompatActivity {
@@ -19,6 +31,8 @@ public class UserRescueActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private Toolbar mainToolbar;
     private FirebaseFirestore firestore;
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference();
+    TextView count1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,38 +44,51 @@ public class UserRescueActivity extends AppCompatActivity {
         mainToolbar = findViewById(R.id.main_toolbar);
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.rescue);
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        count1 = findViewById(R.id.textView10);
+        Query countQuery = databaseReference.child("evacuation");
+        countQuery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId())
-                {
-                    case R.id.userlandingpage:
-                        startActivity(new Intent(getApplicationContext(),UserHomeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int questionCount = (int) snapshot.getChildrenCount();
+                count1.setText(""+questionCount);
+            }
 
-                    case R.id.rescue:
-                        return true;
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
-                    case R.id.searchevacuee:
-                        startActivity(new Intent(getApplicationContext(),UserSearchEvacueeActivity.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-                    case R.id.nearest:
-                        startActivity(new Intent(getApplicationContext(),UserNearestEvacuationActivity2.class));
-                        overridePendingTransition(0,0);
-                        return true;
-
-
-                }
-                return false;
             }
         });
 
+                bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                        switch (item.getItemId()) {
+                            case R.id.userlandingpage:
+                                startActivity(new Intent(getApplicationContext(), UserHomeActivity.class));
+                                overridePendingTransition(0, 0);
+                                return true;
+
+                            case R.id.rescue:
+                                return true;
+
+                            case R.id.searchevacuee:
+                                startActivity(new Intent(getApplicationContext(), UserSearchEvacueeActivity.class));
+                                overridePendingTransition(0, 0);
+                                return true;
+
+                            case R.id.nearest:
+                                startActivity(new Intent(getApplicationContext(), UserNearestEvacuationActivity2.class));
+                                overridePendingTransition(0, 0);
+                                return true;
+
+
+                        }
+                        return false;
+                    }
+                });
+
     }
+
 
     @Override
     protected void onStart() {

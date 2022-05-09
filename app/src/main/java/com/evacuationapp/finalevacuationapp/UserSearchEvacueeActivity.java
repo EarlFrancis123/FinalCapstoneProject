@@ -4,17 +4,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.SearchView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.evacuationapp.finalevacuationapp.Adapter.myadapter;
+import com.evacuationapp.finalevacuationapp.Model.model;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
@@ -27,6 +28,7 @@ public class UserSearchEvacueeActivity extends AppCompatActivity {
     myadapter adapter;
     private FirebaseFirestore firestore;
     SearchView SearchView;
+    private Toolbar mainToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +41,9 @@ public class UserSearchEvacueeActivity extends AppCompatActivity {
         recview.setLayoutManager(new LinearLayoutManager(this));
         bottomNavigationView = findViewById(R.id.bottom_navigator);
         bottomNavigationView.setSelectedItemId(R.id.searchevacuee);
+        mainToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("Evacuation");
 
         FirebaseRecyclerOptions<model> options =
                 new FirebaseRecyclerOptions.Builder<model>()
@@ -76,19 +81,7 @@ public class UserSearchEvacueeActivity extends AppCompatActivity {
             }
         });
 
-        SearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                processsearch(s);
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String s) {
-                processsearch(s);
-                return false;
-            }
-        });
 
     }
 
@@ -116,10 +109,25 @@ public class UserSearchEvacueeActivity extends AppCompatActivity {
     {
         getMenuInflater().inflate(R.menu.searchmenu,menu);
 
+        MenuItem item=menu.findItem(R.id.searchView);
 
+        SearchView searchView=(SearchView)item.getActionView();
 
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener()
+        {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
 
+                processsearch(s);
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String s) {
+                processsearch(s);
+                return false;
+            }
+        });
 
         return super.onCreateOptionsMenu(menu);
     }

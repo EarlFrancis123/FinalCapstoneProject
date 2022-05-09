@@ -1,7 +1,6 @@
 package com.evacuationapp.finalevacuationapp;
 
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -154,12 +153,12 @@ public class StaffHomeActivity extends AppCompatActivity {
                             return true;
 
                         case R.id.addevacuation:
-                            startActivity(new Intent(getApplicationContext(),StaffAddEvacuationActivity2.class));
+                            startActivity(new Intent(getApplicationContext(), StaffAddEvacuationActivity2.class));
                             overridePendingTransition(0,0);
                             return true;
 
                         case R.id.addevacuee:
-                            startActivity(new Intent(getApplicationContext(),StaffAddEvacueeActivity2.class));
+                            startActivity(new Intent(getApplicationContext(), StaffAddEvacueeActivity2.class));
                             overridePendingTransition(0,0);
                             return true;
 

@@ -1,4 +1,4 @@
-package com.evacuationapp.finalevacuationapp;
+package com.evacuationapp.finalevacuationapp.Model;
 
 public class model
 {

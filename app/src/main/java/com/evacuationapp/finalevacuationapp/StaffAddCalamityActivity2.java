@@ -7,11 +7,12 @@ import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-import com.evacuationapp.finalevacuationapp.databinding.ActivityStaffaddcalamity2Binding;
 import com.evacuationapp.finalevacuationapp.ui.main.AddCalamitySectionsPagerAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.evacuationapp.finalevacuationapp.databinding.ActivityStaffaddcalamity2Binding;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,7 +21,7 @@ public class StaffAddCalamityActivity2 extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     private FirebaseAuth firebaseAuth;
     private ActivityStaffaddcalamity2Binding binding;
-
+    private Toolbar mainToolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,9 @@ public class StaffAddCalamityActivity2 extends AppCompatActivity {
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-
+        mainToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mainToolbar);
+        getSupportActionBar().setTitle("Evacuation");
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
