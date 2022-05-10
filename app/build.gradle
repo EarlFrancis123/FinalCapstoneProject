@@ -60,6 +60,7 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.7.0'
     implementation 'com.orhanobut:dialogplus:1.11@aar'
     implementation 'com.firebaseui:firebase-ui-database:6.2.1'
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
 }

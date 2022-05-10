@@ -186,8 +186,10 @@ public class StaffHomeActivity extends AppCompatActivity {
             startActivity(new Intent(StaffHomeActivity.this , SetUpActivity.class));
         }else if(item.getItemId() == R.id.sign_out_menu){
             firebaseAuth.signOut();
-            startActivity(new Intent(StaffHomeActivity.this , SignInActivity.class));
-            finish();
+            startActivity(new Intent(StaffHomeActivity.this , SignInActivity.class));finish();
+        }
+        else if(item.getItemId() == R.id.reports_menu){
+            startActivity(new Intent(StaffHomeActivity.this , StaffViewReportsActivity.class));
         }
         return true;
     }

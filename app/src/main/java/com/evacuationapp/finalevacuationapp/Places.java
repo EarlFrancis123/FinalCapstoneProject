@@ -4,7 +4,15 @@ public class Places {
     String streetAddress,state,country,image,evacuationName,evacuationNumber,evacuationCalamityType,evacuationBarangay,calamityName,calamityDetails;
     String firstName, lastName, middleName, contactInfo,gender,age,address,barangay,headOfFamily;
     double latitude,longitude;
+    int totalevacuation;
 
+    public int getTotalevacuation() {
+        return totalevacuation;
+    }
+
+    public void setTotalevacuation(int totalevacuation) {
+        this.totalevacuation = totalevacuation;
+    }
 
     public String getFirstName() {
         return firstName;

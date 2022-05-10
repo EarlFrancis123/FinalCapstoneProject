@@ -15,9 +15,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".StaffViewReportsActivityGeneralReports"
+            android:exported="false" />
+        <activity
+            android:name=".StaffViewReportsActivityMaleAndFemale"
+            android:exported="false" />
+        <activity
+            android:name=".StaffViewReportsActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserNearestEvacuationActivity2"
             android:exported="false"
-
             android:theme="@style/AppTheme.NoActionBar" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.

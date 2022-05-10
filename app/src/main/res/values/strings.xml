@@ -79,6 +79,7 @@
     <string name="title_activity_staff_addcalamity2">StaffADDCalamityActivity2</string>
     <string name="title_activity_staff_add_evacuee2">StaffAddEvacueeActivity2</string>
     <string name="title_activity_user_nearest_evacuation2">UserNearestEvacuationActivity2</string>
+    <string name="NumberofEvacuation">Number of Evacuation</string>
 
 
 </resources>
